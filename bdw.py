@@ -36,11 +36,11 @@ def fit(df_data: pd.DataFrame):
         method='Powell'    # ?
     )
 
-    # assert any(
-    #     isclose(param, 0.0001, rel_tol=0.05, abs_tol=0.001) or
-    #     isclose(param, 10000, rel_tol=0.05, abs_tol=0.001)
-    #     for param in res.x
-    # ) is False, "Inappropriate funnel"
+    assert any(
+        isclose(param, 0.0001, rel_tol=0.05, abs_tol=0.001) or
+        isclose(param, 10000, rel_tol=0.05, abs_tol=0.001)
+        for param in res.x
+    ) is False, "Inappropriate funnel"
 
     return res
 
